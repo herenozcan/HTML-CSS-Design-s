@@ -1,0 +1,67 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #b4c3c3;
+  padding-top: 370px;
+}
+
+.card {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  color: grey;
+  background:url(./komarov-egor-naVnuQTEdvU-unsplash.jpg) center no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card_content {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+  border-radius: 20px;
+  transform: translateY(70px);
+  transition: transform .25s;
+}
+
+.card_content::before {
+  content: '';
+  position:absolute;
+  top: -47px;
+  right: -45px;
+  width: 100px;
+  height: 100px;
+  transform: rotate(-175deg);
+  border-radius: 50%;
+  box-shadow: inset 48px 48px white;
+}
+
+.title {
+  color: grey;
+  line-height: 15px;
+}
+
+.subtitle {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+.card:hover .card_content {
+  transform: translateY(0);
+}
+
+.card:hover .description {
+  opacity: 1;
+  transition-delay: .25s;
+}
