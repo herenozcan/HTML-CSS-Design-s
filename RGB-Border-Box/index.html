@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB Border Box</title>
+    <style>
+        :root {
+            --cor-background: #212123;
+            --cor-reflexo: rgba(255, 255, 255, 0.4);
+            --cores-dancantes: rgb(76, 217, 105), rgb(52, 170, 220), rgb(88, 86, 217),
+                rgb(255, 45, 83);
+        }
+
+        * {
+            font-family: "Verdana", sans-serif;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            letter-spacing: 0px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            scroll-behavior: smooth;
+            margin: 0;
+        }
+
+        html {
+            padding: 3rem;
+            background-color: #212123;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #EFEFEF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            background: linear-gradient(to right, var(--cores-dancantes));
+            width: 250px;
+            height: 90px;
+            border-radius: 10px;
+            position: relative;
+            z-index: 999;
+            animation: coresDancantes 2s linear infinite;
+        }
+
+        @keyframes coresDancantes {
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        .content .box,
+        .content span {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .content .box {
+            z-index: 1;
+            background-color: var(--cor-background);
+            width: 240px;
+            height: 80px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .content>span {
+            height: 100%;
+            width: 100%;
+            background: inherit;
+            border-radius: 10px;
+        }
+
+        .content>span:nth-child(1) {
+            filter: blur(2px);
+        }
+
+        .content>span:nth-child(2) {
+            filter: blur(5px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="box">
+            <span>
+                HTML, CSS & JS
+            </span>
+        </div>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+
+</html>
