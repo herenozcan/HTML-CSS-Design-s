@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wind Effect Plate</title>
+    <style>
+        body{
+            background-color: #000;
+        }
+        .cards {
+            display: grid;
+            grid-column: 1/-1;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            background: #000;
+            grid-gap: 2rem;
+            padding: 2rem;
+            perspective: 1000px;
+        }
+
+        .framework-card {
+            background: rgb(107, 107, 107);
+            border-radius: 20px;
+            padding: 1rem;
+            color: #ffffff;
+            text-align: center;
+            padding-top: 3rem;
+            position: relative;
+            transform-origin: top center;
+            --rotate: 10deg;
+            transform: rotateX(var(--rotate));
+            transition: transform 0.2s;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .framework-card:before {
+            right: auto;
+            left: 20px;
+        }
+
+        .framework-card:hover {
+            transform: rotateX(-20deg);
+        }
+
+        card:before,
+        .framework-card:after {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            background: #7a5f94;
+            border: 1px solid #000;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+            top: 15px;
+            right: 20px;
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .framework-card:before,
+        .framework-card:after {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            background: #ffffff;
+            border: 1px solid #000;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+            top: 15px;
+            right: 20px;
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .framework-card img {
+            height: 80px;
+            width: 100%;
+            object-fit: contain;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .framework-card p {
+            font-family: 'radnika-next';
+            font-weight: 900;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cards">
+        <div class="framework-card"><img src="./1255266.png">
+            <p>Arch</p>
+        </div>
+        <div class="framework-card"><img src="./1242px-Void_Linux_logo.svg.png">
+            <p>Void</p>
+        </div>
+        <div class="framework-card"><img src="./2048px-Logo-ubuntu_cof-orange-hex.svg.png">
+            <p>Ubuntu</p>
+        </div>
+        <div class="framework-card"><img src="./debian-logo-1024x576.png">
+            <p>Debian</p>
+        </div>
+        <div class="framework-card"><img src="./Fedora_logo.svg.png">
+            <p>Fedora</p>
+        </div>
+        <div class="framework-card"><img src="./Gentoo_Linux_logo_matte.svg.png">
+            <p>Gentoo</p>
+        </div>
+    </div>
+</body>
+
+</html>

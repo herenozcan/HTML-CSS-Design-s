@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Rotating</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body {
+            background: #212123;
+            margin: 4rem;
+        }
+
+        .card__swivel {
+            background-color: transparent;
+            width: 300px;
+            height: 200px;
+            perspective: 1000px;
+        }
+
+        .card__swivel-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .card__swivel:hover .card__swivel-content {
+            transform: rotateY(180deg);
+        }
+
+        .card__swivel-content--front,
+        .card__swivel-content--rear {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .card__swivel-content--front {
+            background: linear-gradient(229deg, #1e1e1f, #464b4a);
+        }
+
+        .card__swivel-content--rear {
+            background: linear-gradient(229deg, #464b4a, #1e1e1f);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .card__swivel-content--rear h1,
+        .card__swivel-content--rear p {
+            margin: 0;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .card__swivel-content--rear h1 {
+            font-size: 1.7rem;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            filter: drop-shadow(2px 2px 5px black);
+            opacity: .7;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<div class="card__swivel">
+    <div class="card__swivel-content">
+        <div class="card__swivel-content--front">
+            <img src="./1255266.png" alt="Logo Programador CS" class="logo">
+        </div>
+        <div class="card__swivel-content--rear">
+            <img src="./1255266.png" alt="Logo Programador CS" class="logo">
+            <h1>Programmer</h1>
+            <p>🧑‍💻 Web Designer</p>
+            <p>:D:D:D</p>
+        </div>
+    </div>
+</div>
+
+</html>
