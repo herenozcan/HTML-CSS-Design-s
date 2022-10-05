@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;500&display=swap");
+
+:root {
+  --color-background: #ecf0f3;
+  --color-white: #ffffff;
+  --color-default-shadow: rgba(0, 0, 0, 0.16);
+  --color-normal-button: #78797a;
+  --color-normal-button-hover: #afafaf;
+  --color-top-button-dark-gray: #5e5e60;
+  --color-top-button-dark-gray-hover: #7b797a;
+  --color-button-orange: #ff9e0b;
+  --color-button-orange-hover: #c97c02;
+  --color-input-result: #504b52;
+  --color-button-close: #fe5f56;
+  --color-button-minimize: #fdbc2e;
+  --color-button-maximize: #28c840;
+  --color-border-buttons: rgba(0, 0, 0, 0.4);
+  --color-border-calculator: rgba(0, 0, 0, 1);
+}
+
+* {
+  font-family: "Inter", sans-serif;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  letter-spacing: 0px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  margin: 0;
+  background: var(--color-background);
+  outline: none;
+}
+
+.content {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content .calculator {
+  border: 1px solid var(--color-border-calculator);
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 5px 5px 12px var(--color-default-shadow);
+}
+
+.content .calculator .window_options {
+  display: flex;
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  background-color: transparent;
+  column-gap: 7px;
+}
+
+.content .calculator .window_options div {
+  width: 12px;
+  height: 12px;
+  background-color: red;
+  border-radius: 50%;
+  position: relative;
+}
+
+.content .calculator .window_options div::after {
+  content: "";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 11px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.content .calculator .window_options div:nth-child(1) {
+  background-color: var(--color-button-close);
+}
+
+.content .calculator .window_options div:nth-child(2) {
+  background-color: var(--color-button-minimize);
+}
+
+.content .calculator .window_options div:nth-child(3) {
+  background-color: var(--color-button-maximize);
+}
+
+.content .calculator .window_options div:nth-child(1):hover:after {
+  content: "x";
+}
+
+.content .calculator .window_options div:nth-child(2):hover:after {
+  content: "-";
+  line-height: 12px;
+  font-size: 12px;
+}
+
+.content .calculator .window_options div:nth-child(3):hover:after {
+  content: "+";
+}
+
+.content .calculator .content_buttons {
+  display: grid;
+  background-color: var(--color-input-result);
+  border-radius: 10px;
+}
+
+.content .calculator .content_buttons input {
+  grid-column: span 4;
+  height: 70px;
+  width: 260px;
+  background-color: var(--color-input-result);
+  border: none;
+  border-radius: 10px;
+  color: var(--color-white);
+  font-size: 50px;
+  text-align: right;
+  margin: auto;
+  margin-top: 20px;
+  font-weight: 200;
+}
+
+.content .calculator .content_buttons input::placeholder {
+  color: var(--color-white);
+  opacity: 1;
+}
+
+.content .calculator .content_buttons a {
+  height: 50px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  border: none;
+  background-color: var(--color-normal-button);
+  color: var(--color-white);
+  cursor: pointer;
+  border-right: 1px solid var(--color-border-buttons);
+  border-top: 1px solid var(--color-border-buttons);
+  user-select: none;
+}
+
+.content .calculator .content_buttons a:hover {
+  background-color: var(--color-normal-button-hover);
+}
+
+.content .calculator .content_buttons a.grid-span-2 {
+  grid-column: span 2;
+  width: 100%;
+}
+
+.content .calculator .content_buttons a.initial-buttons {
+  background-color: var(--color-top-button-dark-gray);
+}
+
+.content .calculator .content_buttons a.initial-buttons:hover {
+  background-color: var(--color-top-button-dark-gray-hover);
+}
+
+.content .calculator .content_buttons a:nth-child(4n + 1),
+.content .calculator .content_buttons a:last-child {
+  background-color: var( --color-button-orange);
+  border-right: none;
+}
+
+.content .calculator .content_buttons a:nth-child(4n + 1):hover,
+.content .calculator .content_buttons a:last-child:hover {
+  background-color: var( --color-button-orange-hover);
+}
+
+.border-radius-left {
+  border-bottom-left-radius: 10px;
+}
+
+.border-radius-right {
+  border-bottom-right-radius: 10px;
+}
